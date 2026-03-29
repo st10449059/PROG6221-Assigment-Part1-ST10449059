@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+            
+            // This keeps our Main method nice and clean—very professional!
+            Chatbot myBot = new Chatbot();
+
+            // Kick things off with the audio and the logo
+            myBot.PlayVoiceGreeting();
+            myBot.DisplayLogo();
+
