@@ -28,7 +28,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
             }
             catch (Exception)
             {
-                // If the audio fails, we just log it silently. 
+                // If the audio fails, the user just logs it silently. 
                 // This keeps the user experience smooth.
             }
         }
@@ -62,19 +62,19 @@ namespace PROG6221_Assigment_Part1_ST10449059
             foreach (char c in message)
             {
                 Console.Write(c);
-                Thread.Sleep(30); // 30ms is usually the 'sweet spot' for readability
+                Thread.Sleep(30); // 30ms is the best for readability
             }
             Console.WriteLine();
             Console.ResetColor();
         }
         /// <summary>
         /// This is the 'brain' of the bot. 
-        /// We use string manipulation to make sure the bot isn't picky about 
+        /// i use string manipulation to make sure the bot isn't picky about 
         /// how the user types (caps, spaces, etc.).
         /// </summary>
         public void ProcessInput(string input)
         {
-            // First, let's clean up the input. 
+             
             // .Trim() kills extra spaces, and .ToLower() means 'PHISHING' works just as well as 'phishing'.
             string cleanInput = (input ?? "").Trim().ToLower();
 
@@ -84,3 +84,38 @@ namespace PROG6221_Assigment_Part1_ST10449059
                 TypeMessage($"{BotName}: Don't be shy! Go ahead and ask me a security question.", ConsoleColor.Yellow);
                 return;
             }
+
+            // Here we check for keywords. 
+            // to make the advice more valuable for the user.
+            if (cleanInput.Contains("password"))
+            {
+                TypeMessage($"{BotName}: Pro-tip: Passwords should be long (12+ characters) and unique. " +
+                            "Think of a 'Passphrase' like 'Correct-Battery-Horse-Staple'—it's easy for humans, " +
+                            "but a nightmare for hackers. (Reference: NIST, 2024).", ConsoleColor.Green);
+            }
+            else if (cleanInput.Contains("phishing"))
+            {
+                TypeMessage($"{BotName}: Phishing is all about trickery. If an email feels urgent or 'too good to be true', " +
+                            "it usually is. Always double-check the sender's email address for typos like 'g00gle.com'.", ConsoleColor.Green);
+            }
+            else if (cleanInput.Contains("browsing"))
+            {
+                TypeMessage($"{BotName}: When browsing, look for the 'Padlock' icon in the URL bar. " +
+                            "This means the site uses HTTPS, which encrypts the path between you and the server.", ConsoleColor.Green);
+            }
+            else if (cleanInput.Contains("how are you"))
+            {
+                TypeMessage($"{BotName}: I'm doing great! My antivirus is up to date and my logic circuits are humming.", ConsoleColor.Cyan);
+            }
+            else if (cleanInput.Contains("purpose"))
+            {
+                TypeMessage($"{BotName}: I'm here to help you understand that YOU are the most important firewall in any system.", ConsoleColor.Cyan);
+            }
+            else
+            {
+                // The 'catch-all' response for when the bot gets confused.
+                TypeMessage($"{BotName}: I'm not quite sure I follow. Try asking about 'passwords' or 'browsing'!", ConsoleColor.Red);
+            }
+        }
+    }
+}
