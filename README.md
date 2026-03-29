@@ -29,6 +29,7 @@ A professional C# console application designed to educate users on essential dig
 * APWG (Anti-Phishing Working Group) (2024) Phishing Activity Trends Report. [Online] Available at: https://www.antiphishing.org/resources/apwg-reports/ (Accessed: 29 March 2026).
 * NIST (National Institute of Standards and Technology) (2024) Special Publication 800-63B: Digital Identity Guidelines. [Online] Available at: https://pages.nist.gov/800-63-3/sp800-63b.html (Accessed: 29 March 2026).
 * Microsoft (2024) System.Media Namespace (Reference Documentation). [Online] Available at: https://learn.microsoft.com/en-us/dotnet/api/system.media (Accessed: 29 March 2026).
+* ASCII Art Archive (2024) Computer and Monitor ASCII Art Collections. [Online] Available at: https://www.asciiart.eu/computers/ (Accessed: 29 March 2026).
 
  
 
