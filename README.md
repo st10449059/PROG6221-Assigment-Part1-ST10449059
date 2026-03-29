@@ -26,6 +26,9 @@ A professional C# console application designed to educate users on essential dig
 * **NIST (2024):** *Digital Identity Guidelines*. [Online] Available at: https://pages.nist.gov/800-63-3/
 * **Microsoft (2024):** *C# Documentation (System.Media & Threading)*. [Online] Available at: https://learn.microsoft.com/
 * **Cisco (2024):** *What Is Ransomware?*. [Online] Available at: https://www.cisco.com/
+* APWG (Anti-Phishing Working Group) (2024) Phishing Activity Trends Report. [Online] Available at: https://www.antiphishing.org/resources/apwg-reports/ (Accessed: 29 March 2026).
+* NIST (National Institute of Standards and Technology) (2024) Special Publication 800-63B: Digital Identity Guidelines. [Online] Available at: https://pages.nist.gov/800-63-3/sp800-63b.html (Accessed: 29 March 2026).
+* Microsoft (2024) System.Media Namespace (Reference Documentation). [Online] Available at: https://learn.microsoft.com/en-us/dotnet/api/system.media (Accessed: 29 March 2026).
 
  
 
