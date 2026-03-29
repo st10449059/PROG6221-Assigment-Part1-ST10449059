@@ -51,4 +51,10 @@
                 }
             }
 
+            // Keeps the window open so they can see the final message.
+            myBot.TypeMessage("\nPress any key to exit the terminal...");
+            Console.ReadKey();
+        }
+    }
+}
 
