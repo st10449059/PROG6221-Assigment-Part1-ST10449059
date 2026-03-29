@@ -37,7 +37,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
         /// <summary>
         /// Just a bit of flair! Using ASCII art makes the console feel like 
         /// a real security terminal from a movie.
-        /// Microsoft (2024) 'Thread.Sleep Method'
+        /// // ASCII Logo generated/sourced from ASCII Art Archive (2024).
         /// </summary>
         public void DisplayLogo()
         {
