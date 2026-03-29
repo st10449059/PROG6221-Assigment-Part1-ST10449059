@@ -12,3 +12,14 @@
             myBot.PlayVoiceGreeting();
             myBot.DisplayLogo();
 
+            // Let's get on a first-name basis with the user
+            myBot.TypeMessage("SYSTEM: Security link established...");
+            myBot.TypeMessage("Who am I speaking with today? ", ConsoleColor.Gray);
+
+            // We use the null-coalescing operator (??) here to avoid any null-pointer headaches.
+            string nameInput = Console.ReadLine() ?? "";
+
+            // If they leave the name blank, we'll just call them 'Guest'.
+            myBot.UserName = string.IsNullOrWhiteSpace(nameInput) ? "Guest" : nameInput.Trim();
+
+
