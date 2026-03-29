@@ -52,3 +52,18 @@ namespace PROG6221_Assigment_Part1_ST10449059
             ");
             Console.ResetColor();
         }
+        /// <summary>
+        /// This creates the 'typing' effect. By looping through each character 
+        /// and adding a tiny delay, it feels like the bot is actually talking to you.
+        /// </summary>
+        public void TypeMessage(string message, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            foreach (char c in message)
+            {
+                Console.Write(c);
+                Thread.Sleep(30); // 30ms is usually the 'sweet spot' for readability
+            }
+            Console.WriteLine();
+            Console.ResetColor();
+        }
