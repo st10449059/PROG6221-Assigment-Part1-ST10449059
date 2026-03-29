@@ -29,4 +29,26 @@
             myBot.TypeMessage($"\nWelcome to the command line, {myBot.UserName}. How can I assist with your security today?", ConsoleColor.Cyan);
             myBot.TypeMessage("(Type 'exit' whenever you're ready to sign off.)\n");
 
+            // This loop keeps the conversation going until the user says 'exit'.
+            bool active = true;
+            while (active)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"{myBot.UserName} > ");
+
+                string userQuery = Console.ReadLine() ?? "";
+
+                // Checking for the exit command specifically
+                if (userQuery.ToLower().Trim() == "exit")
+                {
+                    active = false;
+                    myBot.TypeMessage("\n[SYSTEM]: Connection severed. Stay safe out there!", ConsoleColor.Red);
+                }
+                else
+                {
+                    // Hand the question over to the Chatbot class to deal with
+                    myBot.ProcessInput(userQuery);
+                }
+            }
+
 
