@@ -67,3 +67,20 @@ namespace PROG6221_Assigment_Part1_ST10449059
             Console.WriteLine();
             Console.ResetColor();
         }
+        /// <summary>
+        /// This is the 'brain' of the bot. 
+        /// We use string manipulation to make sure the bot isn't picky about 
+        /// how the user types (caps, spaces, etc.).
+        /// </summary>
+        public void ProcessInput(string input)
+        {
+            // First, let's clean up the input. 
+            // .Trim() kills extra spaces, and .ToLower() means 'PHISHING' works just as well as 'phishing'.
+            string cleanInput = (input ?? "").Trim().ToLower();
+
+            // If they just hit 'Enter' without typing, we give them a gentle nudge.
+            if (string.IsNullOrEmpty(cleanInput))
+            {
+                TypeMessage($"{BotName}: Don't be shy! Go ahead and ask me a security question.", ConsoleColor.Yellow);
+                return;
+            }
