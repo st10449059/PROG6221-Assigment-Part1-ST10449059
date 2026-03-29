@@ -18,7 +18,9 @@ A professional C# console application designed to educate users on essential dig
 * ..
 
 # Commits
+ <img width="1915" height="1015" alt="Screenshot 2026-03-29 185755" src="https://github.com/user-attachments/assets/3ded13d9-6b1b-4f1e-8721-dacec5d6c7e8" />
  
+
 # Citations & References
 
 * **NIST (2024):** *Digital Identity Guidelines*. [Online] Available at: https://pages.nist.gov/800-63-3/
