@@ -22,4 +22,11 @@
             // If they leave the name blank, we'll just call them 'Guest'.
             myBot.UserName = string.IsNullOrWhiteSpace(nameInput) ? "Guest" : nameInput.Trim();
 
+            // Clear the console and reprint the logo for a professional 'app' feel.
+            Console.Clear();
+            myBot.DisplayLogo();
+
+            myBot.TypeMessage($"\nWelcome to the command line, {myBot.UserName}. How can I assist with your security today?", ConsoleColor.Cyan);
+            myBot.TypeMessage("(Type 'exit' whenever you're ready to sign off.)\n");
+
 
