@@ -18,7 +18,7 @@ A professional C# console application designed to educate users on essential dig
 * ..
  
 # Citations & References
-This project adheres to academic standards by referencing the following authorities:
+
 * **NIST (2024):** *Digital Identity Guidelines*. [Online] Available at: https://pages.nist.gov/800-63-3/
 * **Microsoft (2024):** *C# Documentation (System.Media & Threading)*. [Online] Available at: https://learn.microsoft.com/
 * **Cisco (2024):** *What Is Ransomware?*. [Online] Available at: https://www.cisco.com/
