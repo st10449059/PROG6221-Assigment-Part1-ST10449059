@@ -8,7 +8,7 @@
             // This keeps our Main method nice and clean—very professional!
             Chatbot myBot = new Chatbot();
 
-            // Kick things off with the audio and the logo
+            //  starts things off with the audio and the logo
             myBot.PlayVoiceGreeting();
             myBot.DisplayLogo();
 
@@ -17,6 +17,7 @@
             myBot.TypeMessage("Who am I speaking with today? ", ConsoleColor.Gray);
 
             // We use the null-coalescing operator (??) here to avoid any null-pointer headaches.
+            //Microsoft (2024) '?? and ??= operators'.
             string nameInput = Console.ReadLine() ?? "";
 
             // If they leave the name blank, we'll just call them 'Guest'.

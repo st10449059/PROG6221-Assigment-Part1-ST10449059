@@ -16,7 +16,8 @@ namespace PROG6221_Assigment_Part1_ST10449059
         /// This method handles the audio greeting. 
         /// I've wrapped it in a try-catch block because if the file is missing, 
         /// we want the app to keep running instead of crashing.
-        /// </summary>
+        /// Microsoft (2024) 'SoundPlayer Class'.
+        /// </summary> 
         public void PlayVoiceGreeting()
         {
             try
@@ -36,6 +37,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
         /// <summary>
         /// Just a bit of flair! Using ASCII art makes the console feel like 
         /// a real security terminal from a movie.
+        /// Microsoft (2024) 'Thread.Sleep Method'
         /// </summary>
         public void DisplayLogo()
         {
