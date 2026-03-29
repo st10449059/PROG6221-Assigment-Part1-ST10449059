@@ -87,18 +87,18 @@ namespace PROG6221_Assigment_Part1_ST10449059
 
             // Here we check for keywords. 
             // to make the advice more valuable for the user.
-            if (cleanInput.Contains("password"))
+            if (cleanInput.Contains("what should my password be"))
             {
                 TypeMessage($"{BotName}: Pro-tip: Passwords should be long (12+ characters) and unique. " +
                             "Think of a 'Passphrase' like 'Correct-Battery-Horse-Staple'—it's easy for humans, " +
                             "but a nightmare for hackers. (Reference: NIST, 2024).", ConsoleColor.Green);
             }
-            else if (cleanInput.Contains("phishing"))
+            else if (cleanInput.Contains("what is phishing"))
             {
                 TypeMessage($"{BotName}: Phishing is all about trickery. If an email feels urgent or 'too good to be true', " +
                             "it usually is. Always double-check the sender's email address for typos like 'g00gle.com'.", ConsoleColor.Green);
             }
-            else if (cleanInput.Contains("browsing"))
+            else if (cleanInput.Contains("what to do when browsing"))
             {
                 TypeMessage($"{BotName}: When browsing, look for the 'Padlock' icon in the URL bar. " +
                             "This means the site uses HTTPS, which encrypts the path between you and the server.", ConsoleColor.Green);
@@ -107,7 +107,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
             {
                 TypeMessage($"{BotName}: I'm doing great! My antivirus is up to date and my logic circuits are humming.", ConsoleColor.Cyan);
             }
-            else if (cleanInput.Contains("purpose"))
+            else if (cleanInput.Contains("what is your purpose"))
             {
                 TypeMessage($"{BotName}: I'm here to help you understand that YOU are the most important firewall in any system.", ConsoleColor.Cyan);
             }
