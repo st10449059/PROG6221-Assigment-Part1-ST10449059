@@ -15,7 +15,7 @@ A professional C# console application designed to educate users on essential dig
 
 # Github link
 
-* ..
+* https://github.com/st10449059/PROG6221-Assigment-Part1-ST10449059
 
 # Commits
  <img width="1915" height="1015" alt="Screenshot 2026-03-29 185755" src="https://github.com/user-attachments/assets/3ded13d9-6b1b-4f1e-8721-dacec5d6c7e8" />
