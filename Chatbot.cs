@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Media; // Let's us play the WAV file (Reference: Microsoft, 2024)
 using System.Threading; // Gives us control over the 'typing' speed (Reference: Microsoft, 2024)
 
@@ -36,14 +37,14 @@ namespace PROG6221_Assigment_Part1_ST10449059
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(@"
-      ___________________________________________________
-     [      ____      _              ____                ]
-     [     / ___|   _| |__   ___ _ _| ___| _   _  __ _ _ __ __| | ]
+      _____________________________________________________________
+     [      ____      _              ____                          ]
+     [     / ___|   _| |__   ___ _ _| ___| _   _  __ _ _ __ __| |  ]
      [    | |  | | | | '_ \ / _ \ '__| |  _| | | |/ _` | '__/ _` | ]
      [    | |__| |_| | |_) |  __/ |  | |_| | |_| | (_| | | | (_| | ]
      [     \____\__, |_.__/ \___|_|   \____|\__,_|\__,_|_|  \__,_| ]
-     [          |___/  AWARENESS BOT v1.0                ]
-     [___________________________________________________]
+     [          |___/  AWARENESS BOT v1.0                          ]
+     [_____________________________________________________________]
             ");
             Console.ResetColor();
         }
@@ -79,15 +80,15 @@ namespace PROG6221_Assigment_Part1_ST10449059
             // I've added citations here to show the advice is based on real standards.
             if (cleanInput.Contains("password"))
             {
-                TypeMessage($"{BotName}: Password safety requires 12+ characters and unique phrases. (Ref: NIST, 2024).", ConsoleColor.Green);
+                TypeMessage($"{BotName}: Password safety requires 12+ characters and unique phrases. ", ConsoleColor.Green); //(Ref: NIST, 2024).
             }
             else if (cleanInput.Contains("phishing"))
             {
-                TypeMessage($"{BotName}: Phishing is a trick to steal info. Always check the sender's email! (Ref: APWG, 2024).", ConsoleColor.Green);
+                TypeMessage($"{BotName}: Phishing is a trick to steal info. Always check the sender's email! ", ConsoleColor.Green); //(Ref: APWG, 2024).
             }
             else if (cleanInput.Contains("browsing"))
             {
-                TypeMessage($"{BotName}: Safe browsing means using HTTPS and checking the padlock icon. (Ref: Cloudflare, 2024).", ConsoleColor.Green);
+                TypeMessage($"{BotName}: Safe browsing means using HTTPS and checking the padlock icon. ", ConsoleColor.Green); //(Ref: Cloudflare, 2024).
             }
             else if (cleanInput.Contains("how are you"))
             {
