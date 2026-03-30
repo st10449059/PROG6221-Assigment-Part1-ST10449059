@@ -3,7 +3,7 @@
 A professional C# console application designed to educate users on essential digital security practices. This project features a modular architecture, multimedia integration, and a focus on user interaction.
 
 # Key Features
-* **Multimedia Integration:** Uses System.Media to provide an audible greeting upon launch.
+* **Multimedia Integration:** Uses ' System.Media ' to provide an audible greeting upon launch.
 * **Simulated UX:** Implements a custom "typing" effect for a more natural conversational flow.
 * **Technical Knowledge Base:** Provides detailed definitions and actionable advice on:
     * Password Security (NIST Standards)
