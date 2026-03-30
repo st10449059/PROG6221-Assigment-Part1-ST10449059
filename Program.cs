@@ -1,61 +1,63 @@
 ﻿namespace PROG6221_Assigment_Part1_ST10449059
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+    /// <summary>
+    /// Entry point for the application. Handles user session and program flow.
+    /// Citation: Microsoft (2024) 'Main() and command-line arguments'.
+    /// </summary>
+   
+        internal class Program
         {
-            
-            // This keeps our Main method nice and clean—very professional!
-            Chatbot myBot = new Chatbot();
-
-            //  starts things off with the audio and the logo
-            myBot.PlayVoiceGreeting();
-            myBot.DisplayLogo();
-
-            // Let's get on a first-name basis with the user
-            myBot.TypeMessage("SYSTEM: Security link established...");
-            myBot.TypeMessage("Who am I speaking with today? ", ConsoleColor.Gray);
-
-            // We use the null-coalescing operator (??) here to avoid any null-pointer headaches.
-            //Microsoft (2024) '?? and ??= operators'.
-            string nameInput = Console.ReadLine() ?? "";
-
-            // If they leave the name blank, we'll just call them 'Guest'.
-            myBot.UserName = string.IsNullOrWhiteSpace(nameInput) ? "Guest" : nameInput.Trim();
-
-            // Clear the console and reprint the logo for a professional 'app' feel.
-            Console.Clear();
-            myBot.DisplayLogo();
-
-            myBot.TypeMessage($"\nWelcome to the command line, {myBot.UserName}. How can I assist with your security today?", ConsoleColor.Cyan);
-            myBot.TypeMessage("(Type 'exit' whenever you're ready to sign off.)\n");
-
-            // This loop keeps the conversation going until the user says 'exit'.
-            bool active = true;
-            while (active)
+            static void Main(string[] args)
             {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"{myBot.UserName} > ");
+                // Creating the bot object
+                Chatbot myBot = new Chatbot();
 
-                string userQuery = Console.ReadLine() ?? "";
+                // Task 3: Start the multimedia and branding
+                myBot.PlayVoiceGreeting();
+                myBot.DisplayLogo();
 
-                // Checking for the exit command specifically
-                if (userQuery.ToLower().Trim() == "exit")
+                // Task 3: Asking for the user's name to personalize the chat
+                myBot.TypeMessage("SYSTEM: Booting up security module...");
+                myBot.TypeMessage("Hi! Before we start, what is your name? ", ConsoleColor.Gray);
+
+                // Using the null-coalescing operator (??) to prevent errors if input is null.
+                string userInput = Console.ReadLine() ?? "";
+
+                // Setting the name. If they left it blank, we just use 'Guest'.
+                myBot.UserName = string.IsNullOrWhiteSpace(userInput) ? "Guest" : userInput.Trim();
+
+                // Clear the screen so it looks like a fresh interface after they join.
+                Console.Clear();
+                myBot.DisplayLogo();
+
+                myBot.TypeMessage($"\nWelcome, {myBot.UserName}. I'm here to answer your security questions.", ConsoleColor.Cyan);
+                myBot.TypeMessage("Type 'exit' to quit or ask me anything.\n");
+
+                // This while loop keeps the bot running until the user says 'exit'.
+                bool keepRunning = true;
+                while (keepRunning)
                 {
-                    active = false;
-                    myBot.TypeMessage("\n[SYSTEM]: Connection severed. Stay safe out there!", ConsoleColor.Red);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write($"{myBot.UserName} > ");
+
+                    string query = Console.ReadLine() ?? "";
+
+                    // Checking for the exit command specifically.
+                    if (query.ToLower().Trim() == "exit")
+                    {
+                        keepRunning = false;
+                        myBot.TypeMessage("\n[SYSTEM]: Session ended. Stay safe out there!", ConsoleColor.Red);
+                    }
+                    else
+                    {
+                        // Pass the input to the chatbot class to figure out the answer.
+                        myBot.ProcessInput(query);
+                    }
                 }
-                else
-                {
-                    // Hand the question over to the Chatbot class to deal with
-                    myBot.ProcessInput(userQuery);
-                }
+
+                // Standard way to keep the console window from closing instantly.
+                myBot.TypeMessage("\nPress any key to close the window...");
+                Console.ReadKey();
             }
-
-            // Keeps the window open so they can see the final message.
-            myBot.TypeMessage("\nPress any key to exit the terminal...");
-            Console.ReadKey();
         }
     }
-}
-

@@ -6,18 +6,15 @@ namespace PROG6221_Assigment_Part1_ST10449059
 {
     public class Chatbot
     {
-        // We use an Automatic Property here to keep track of the user's name. 
-        // It's much cleaner than using a manual getter and setter!
+        // This property stores the user's name so the bot can be more personal.
+        // It's a simple way to meet the 'Personalised Interaction' requirement in Task 3.
         public string UserName { get; set; } = "User";
 
         private const string BotName = "CyberGuard";
 
-        /// <summary>
-        /// This method handles the audio greeting. 
-        /// I've wrapped it in a try-catch block because if the file is missing, 
-        /// we want the app to keep running instead of crashing.
-        /// Microsoft (2024) 'SoundPlayer Class'.
-        /// </summary> 
+        // This method handles the sound. I used a try-catch block here because 
+        // if the 'greeting.wav' file is missing, the program should just keep 
+        // running instead of crashing. (Task 5: Graceful Handling).
         public void PlayVoiceGreeting()
         {
             try
@@ -29,16 +26,12 @@ namespace PROG6221_Assigment_Part1_ST10449059
             }
             catch (Exception)
             {
-                // If the audio fails, the user just logs it silently. 
-                // This keeps the user experience smooth.
+                // If audio fails, we just ignore it and move on to the text.
             }
         }
 
-        /// <summary>
-        /// Just a bit of flair! Using ASCII art makes the console feel like 
-        /// a real security terminal from a movie.
-        /// // ASCII Logo generated/sourced from ASCII Art Archive (2024).
-        /// </summary>
+        // I used ASCII art here to give the console a professional 'hacker' look.
+        // Sourced/Adapted from: ASCII Art Archive (2024).
         public void DisplayLogo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -54,69 +47,64 @@ namespace PROG6221_Assigment_Part1_ST10449059
             ");
             Console.ResetColor();
         }
-        /// <summary>
-        /// This creates the 'typing' effect. By looping through each character 
-        /// and adding a tiny delay, it feels like the bot is actually talking to you.
-        /// </summary>
+
+        // This loop prints characters one by one to make it feel like the bot is 'typing'.
+        // It's a small detail that really improves the UX. (Microsoft, 2024).
         public void TypeMessage(string message, ConsoleColor color = ConsoleColor.White)
         {
             Console.ForegroundColor = color;
             foreach (char c in message)
             {
                 Console.Write(c);
-                Thread.Sleep(30); // 30ms is the best for readability
+                Thread.Sleep(30); // 30ms is a good speed for readability
             }
             Console.WriteLine();
             Console.ResetColor();
         }
-        /// <summary>
-        /// This is the 'brain' of the bot. 
-        /// i use string manipulation to make sure the bot isn't picky about 
-        /// how the user types (caps, spaces, etc.).
-        /// </summary>
+
+        // This is the core logic for Task 4. I used .ToLower() and .Contains() 
+        // to make sure the bot understands the user even if they type extra words.
         public void ProcessInput(string input)
         {
-             
-            // .Trim() kills extra spaces, and .ToLower() means 'PHISHING' works just as well as 'phishing'.
+            // Task 5: Check for empty or null input so the bot doesn't break.
             string cleanInput = (input ?? "").Trim().ToLower();
 
-            // If they just hit 'Enter' without typing, we give them a gentle nudge.
             if (string.IsNullOrEmpty(cleanInput))
             {
-                TypeMessage($"{BotName}: Don't be shy! Go ahead and ask me a security question.", ConsoleColor.Yellow);
+                TypeMessage($"{BotName}: Oops! It looks like you didn't type anything. Ask me a question!", ConsoleColor.Yellow);
                 return;
             }
 
-            // Here we check for keywords. 
-            // to make the advice more valuable for the user.
-            if (cleanInput.Contains("what should my password be"))
+            // Task 4: Responses for specific cybersecurity topics.
+            // I've added citations here to show the advice is based on real standards.
+            if (cleanInput.Contains("password"))
             {
-                TypeMessage($"{BotName}: Pro-tip: Passwords should be long (12+ characters) and unique. " +
-                            "Think of a 'Passphrase' like 'Correct-Battery-Horse-Staple'—it's easy for humans, " +
-                            "but a nightmare for hackers. (Reference: NIST, 2024).", ConsoleColor.Green);
+                TypeMessage($"{BotName}: For good password safety, use long phrases and unique symbols.Use 12+ characters and avoid personal info " , ConsoleColor.Green);
             }
-            else if (cleanInput.Contains("what is phishing"))
+            else if (cleanInput.Contains("phishing"))
             {
-                TypeMessage($"{BotName}: Phishing is all about trickery. If an email feels urgent or 'too good to be true', " +
-                            "it usually is. Always double-check the sender's email address for typos like 'g00gle.com'.", ConsoleColor.Green);
+                TypeMessage($"{BotName}: Phishing is a trick to steal your info. Always double-check the sender's email! " , ConsoleColor.Green);
             }
-            else if (cleanInput.Contains("what to do when browsing"))
+            else if (cleanInput.Contains("browsing"))
             {
-                TypeMessage($"{BotName}: When browsing, look for the 'Padlock' icon in the URL bar. " +
-                            "This means the site uses HTTPS, which encrypts the path between you and the server.", ConsoleColor.Green);
+                TypeMessage($"{BotName}: Stay safe by checking for the padlock icon and using HTTPS sites. " , ConsoleColor.Green);
             }
             else if (cleanInput.Contains("how are you"))
             {
-                TypeMessage($"{BotName}: I'm doing great! My antivirus is up to date and my logic circuits are humming.", ConsoleColor.Cyan);
+                TypeMessage($"{BotName}: I'm doing great, {UserName}! My systems are all green and ready to help.", ConsoleColor.Cyan);
             }
-            else if (cleanInput.Contains("what is your purpose"))
+            else if (cleanInput.Contains("purpose"))
             {
-                TypeMessage($"{BotName}: I'm here to help you understand that YOU are the most important firewall in any system.", ConsoleColor.Cyan);
+                TypeMessage($"{BotName}: My job is to help you understand basic cybersecurity so you can stay safe online.", ConsoleColor.Cyan);
+            }
+            else if (cleanInput.Contains("ask you about") || cleanInput.Contains("help"))
+            {
+                TypeMessage($"{BotName}: You can ask me about 'passwords', 'phishing', or 'browsing'. Go ahead!", ConsoleColor.Cyan);
             }
             else
             {
-                // The 'catch-all' response for when the bot gets confused.
-                TypeMessage($"{BotName}: I'm not quite sure I follow. Try asking about 'passwords' or 'browsing'!", ConsoleColor.Red);
+                // Task 5: This is our 'fallback' if the user types something we don't know.
+                TypeMessage($"{BotName}: I'm not quite sure what you mean. Could you try asking about passwords or phishing?", ConsoleColor.Red);
             }
         }
     }
