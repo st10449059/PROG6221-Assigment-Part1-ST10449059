@@ -79,15 +79,15 @@ namespace PROG6221_Assigment_Part1_ST10449059
             // I've added citations here to show the advice is based on real standards.
             if (cleanInput.Contains("password"))
             {
-                TypeMessage($"{BotName}: For good password safety, use long phrases and unique symbols.Use 12+ characters and avoid personal info " , ConsoleColor.Green);
+                TypeMessage($"{BotName}: Password safety requires 12+ characters and unique phrases. (Ref: NIST, 2024).", ConsoleColor.Green);
             }
             else if (cleanInput.Contains("phishing"))
             {
-                TypeMessage($"{BotName}: Phishing is a trick to steal your info. Always double-check the sender's email! " , ConsoleColor.Green);
+                TypeMessage($"{BotName}: Phishing is a trick to steal info. Always check the sender's email! (Ref: APWG, 2024).", ConsoleColor.Green);
             }
             else if (cleanInput.Contains("browsing"))
             {
-                TypeMessage($"{BotName}: Stay safe by checking for the padlock icon and using HTTPS sites. " , ConsoleColor.Green);
+                TypeMessage($"{BotName}: Safe browsing means using HTTPS and checking the padlock icon. (Ref: Cloudflare, 2024).", ConsoleColor.Green);
             }
             else if (cleanInput.Contains("how are you"))
             {
@@ -95,11 +95,11 @@ namespace PROG6221_Assigment_Part1_ST10449059
             }
             else if (cleanInput.Contains("purpose"))
             {
-                TypeMessage($"{BotName}: My job is to help you understand basic cybersecurity so you can stay safe online.", ConsoleColor.Cyan);
+                TypeMessage($"{BotName}: My job is to help you understand basic cybersecurity to keep you safe online.", ConsoleColor.Cyan);
             }
             else if (cleanInput.Contains("ask you about") || cleanInput.Contains("help"))
             {
-                TypeMessage($"{BotName}: You can ask me about 'passwords', 'phishing', or 'browsing'. Go ahead!", ConsoleColor.Cyan);
+                TypeMessage($"{BotName}: You can ask me about 'passwords', 'phishing', or 'browsing'.", ConsoleColor.Cyan);
             }
             else
             {
