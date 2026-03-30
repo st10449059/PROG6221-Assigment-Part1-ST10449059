@@ -11,7 +11,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
         // It's a simple way to meet the 'Personalised Interaction' requirement in Task 3.
         public string UserName { get; set; } = "User";
 
-        private const string BotName = "CyberGuard";
+        private const string BotName = "CyberShield";
 
         // This method handles the sound. I used a try-catch block here because 
         // if the 'greeting.wav' file is missing, the program should just keep 
@@ -37,14 +37,13 @@ namespace PROG6221_Assigment_Part1_ST10449059
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(@"
-      _____________________________________________________________
-     [      ____      _              ____                          ]
-     [     / ___|   _| |__   ___ _ _| ___| _   _  __ _ _ __ __| |  ]
-     [    | |  | | | | '_ \ / _ \ '__| |  _| | | |/ _` | '__/ _` | ]
-     [    | |__| |_| | |_) |  __/ |  | |_| | |_| | (_| | | | (_| | ]
-     [     \____\__, |_.__/ \___|_|   \____|\__,_|\__,_|_|  \__,_| ]
-     [          |___/  AWARENESS BOT v1.0                          ]
-     [_____________________________________________________________]
+          ::=======================::
+          || ..................... ||
+          || .. C Y B E R ........ ||
+          || .. S H I E L D ...... ||
+          || ..................... ||
+          || ................. v1  ||
+          ::=======================::
             ");
             Console.ResetColor();
         }
