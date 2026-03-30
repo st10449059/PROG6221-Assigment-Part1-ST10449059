@@ -77,7 +77,6 @@ namespace PROG6221_Assigment_Part1_ST10449059
             }
 
             // Task 4: Responses for specific cybersecurity topics.
-            // I've added citations here to show the advice is based on real standards.
             if (cleanInput.Contains("password"))
             {
                 TypeMessage($"{BotName}: Password safety requires 12+ characters and unique phrases. ", ConsoleColor.Green); //(Ref: NIST, 2024).
