@@ -19,6 +19,9 @@ A professional C# console application designed to educate users on essential dig
 
 # Commits
  <img width="1915" height="1015" alt="Screenshot 2026-03-29 185755" src="https://github.com/user-attachments/assets/3ded13d9-6b1b-4f1e-8721-dacec5d6c7e8" />
+
+ # Logo
+ <img width="1547" height="838" alt="Screenshot 2026-03-30 180922" src="https://github.com/user-attachments/assets/779d396c-44ab-4044-8720-d6543af105f6" />
  
 
 # Citations & References
