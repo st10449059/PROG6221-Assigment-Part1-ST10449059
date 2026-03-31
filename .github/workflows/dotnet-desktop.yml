@@ -24,6 +24,3 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
-
-    - name: Check formatting (optional)
-      run: dotnet format --verify-no-changes || echo "Formatting issues found"
