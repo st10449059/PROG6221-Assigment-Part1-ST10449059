@@ -23,6 +23,10 @@ A professional C# console application designed to educate users on essential dig
  # Logo
 <img width="1919" height="858" alt="Screenshot 2026-03-30 205323" src="https://github.com/user-attachments/assets/50bef793-5bd2-438c-8d16-2f1300aef906" />
 
+# CI Workflow
+<img width="1919" height="984" alt="Screenshot 2026-03-31 162228" src="https://github.com/user-attachments/assets/50abde7f-9a1c-45fb-ba98-70d2ae35eaa9" />
+
+
 # voice greeting 
 [greeting.wav](https://github.com/user-attachments/files/26379704/greeting.wav)
 
