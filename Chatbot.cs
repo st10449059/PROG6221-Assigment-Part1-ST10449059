@@ -31,7 +31,7 @@ namespace PROG6221_Assigment_Part1_ST10449059
             }
         }
 
-        // I used ASCII art here to give the console a professional 'hacker' look.
+        // I used ASCII art here to give the console a professional look.
         // Sourced/Adapted from: ASCII Art Archive (2024).
         public void DisplayLogo()
         {
