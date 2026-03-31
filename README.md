@@ -11,7 +11,7 @@ A professional C# console application designed to educate users on essential dig
     * Safe Browsing (HTTPS/Encryption).
  
 # Youtube link
-* ..
+* https://youtu.be/OuSI8PCM9os
 
 # Github link
 
