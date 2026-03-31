@@ -9,8 +9,9 @@
         {
             static void Main(string[] args)
             {
-                // Creating the bot object
-                Chatbot myBot = new Chatbot();
+            // Creating the bot object
+            // Citation: Cazzola (2025) - Structuring the main chat loop and bot instance
+            Chatbot myBot = new Chatbot();
 
                 // Task 3: Start the multimedia and branding
                 myBot.PlayVoiceGreeting();
@@ -23,8 +24,9 @@
                 // Using the null-coalescing operator (??) to prevent errors if input is null.
                 string userInput = Console.ReadLine() ?? "";
 
-                // Setting the name. If they left it blank, we just use 'Guest'.
-                myBot.UserName = string.IsNullOrWhiteSpace(userInput) ? "Guest" : userInput.Trim();
+            // Setting the name. If they left it blank, we just use 'Guest'.
+            // Citation: Portfolio Courses (2021) - Cleaning user input strings
+            myBot.UserName = string.IsNullOrWhiteSpace(userInput) ? "Guest" : userInput.Trim();
 
                 // Clear the screen so it looks like a fresh interface after they join.
                 Console.Clear();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Media; // Let's us play the WAV file (Reference: Microsoft, 2024)
 using System.Threading; // Gives us control over the 'typing' speed (Reference: Microsoft, 2024)
@@ -66,7 +67,9 @@ namespace PROG6221_Assigment_Part1_ST10449059
         // to make sure the bot understands the user even if they type extra words.
         public void ProcessInput(string input)
         {
-            // Task 5: Check for empty or null input so the bot doesn't break.
+        // Task 5: Check for empty or null input so the bot doesn't break.
+        //Citation: Bakare(2024) - Implementation of tutorial-based response logic.
+        /// Citation: Cazzola (2025) - Managing chatbot state and conditional responses.
             string cleanInput = (input ?? "").Trim().ToLower();
 
             if (string.IsNullOrEmpty(cleanInput))
